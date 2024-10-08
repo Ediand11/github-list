@@ -1,4 +1,3 @@
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Provider } from "../Provider";
 import { RepositoryList } from "../RepositoryList";
 import styles from "./App.module.scss";
@@ -14,7 +13,6 @@ function App() {
           <RepositoryList />
         </main>
       </div>
-      <ReactQueryDevtools initialIsOpen={false} />
     </Provider>
   );
 }
