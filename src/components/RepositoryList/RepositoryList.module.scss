@@ -1,0 +1,124 @@
+.repositoryList {
+  .error {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .loading {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    font-size: 18px;
+    color: #24292e;
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 50px;
+  height: 50px;
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    background-color: #3498db;
+
+    opacity: 0.6;
+
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  &::after {
+    animation-delay: 1s;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginationButton {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 5px 10px;
+  margin: 0 4px;
+
+  background-color: #f6f8fa;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+
+  color: #24292e;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+  &:hover:not(:disabled) {
+    background-color: #f3f4f6;
+    border-color: #bbb;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.paginationInfo {
+  font-size: 14px;
+  margin: 0 10px;
+  color: #c5d1de;
+}
